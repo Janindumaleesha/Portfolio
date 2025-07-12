@@ -22,6 +22,8 @@ const AboutMe = () => {
         </button>
       </div>
     </section>
+
+    
   );
 };
 

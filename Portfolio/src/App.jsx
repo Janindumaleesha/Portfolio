@@ -1,6 +1,9 @@
 import Navbar from "./components/Navbar"
 import AboutMe from "./sections/AboutMe"
 import Hero from "./sections/Hero"
+import Timeline from "./sections/Timeline"
+import Certificate from "./sections/Certificate"
+import ContactMe from "./sections/ContactMe"
 
 function App() {
 
@@ -17,6 +20,9 @@ function App() {
       <Navbar />
       <Hero />
       <AboutMe />
+      <Timeline />
+      <Certificate />
+      <ContactMe />
     </div>
   )
 }
