@@ -1,4 +1,14 @@
 const AboutMe = () => {
+
+  const skills = [
+    { name: "Lorem Ipsum", value: 85 },
+    { name: "Lorem Ipsum", value: 40 },
+    { name: "Lorem Ipsum", value: 55 },
+    { name: "Lorem Ipsum", value: 70 },
+    { name: "Lorem Ipsum", value: 85 },
+    { name: "Lorem Ipsum", value: 65 },
+  ];
+
   return (
     <section className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 md:px-20 py-12 bg-white">
       {/* Left: Diamond shapes */}
@@ -22,8 +32,6 @@ const AboutMe = () => {
         </button>
       </div>
     </section>
-
-    
   );
 };
 
