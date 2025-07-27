@@ -11,14 +11,6 @@ import Footer from "./components/Footer"
 function App() {
 
   return (
-    // < >
-    //   {/* <Hero />
-    //   <AboutMe /> */}
-    //   <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
-    //     <Navbar />
-    //   {/* rest of your content */}
-    //   </div>
-    // </>
     <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
       <Navbar />
       <Hero />
