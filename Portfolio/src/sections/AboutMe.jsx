@@ -1,34 +1,53 @@
-const AboutMe = () => {
+import React, { useState } from 'react';
+import ProfilePicture from '../assets/Profile.png';
 
-  const skills = [
-    { name: "Lorem Ipsum", value: 85 },
-    { name: "Lorem Ipsum", value: 40 },
-    { name: "Lorem Ipsum", value: 55 },
-    { name: "Lorem Ipsum", value: 70 },
-    { name: "Lorem Ipsum", value: 85 },
-    { name: "Lorem Ipsum", value: 65 },
-  ];
+const AboutMe = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handleReadMore = () => {
+    setExpanded((prev) => !prev);
+  };
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 md:px-20 py-12 bg-white">
-      {/* Left: Diamond shapes */}
-      <div className="relative w-64 h-64 mb-12 md:mb-0">
-        {/* Border diamond */}
-        <div className="w-full h-full border-4 border-blue-400 transform rotate-45 absolute"></div>
-        {/* Filled diamond */}
-        <div className="w-full h-full bg-blue-500 transform rotate-45 absolute top-4 left-4 rounded-md"></div>
+    <section
+      id="about"
+      className="flex flex-col md:flex-row items-center max-w-7xl mx-auto py-20 px-6 md:px-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300"
+    >
+      {/* Left Image Circle with glow */}
+      <div className="relative w-80 h-80 mb-12 md:mb-0">
+        {/* Glow/background ring */}
+        <div className="absolute inset-0 rounded-full bg-indigo-700 opacity-40 blur-3xl animate-pulse scale-110"></div>
+        <img
+          src={ProfilePicture}
+          alt="About Me"
+          className="relative rounded-full w-80 h-80 object-cover shadow-2xl border-8 border-gray-900"
+        />
       </div>
 
-      {/* Right: About Me Content */}
-      <div className="md:ml-12 text-center md:text-left max-w-lg">
-        <h2 className="text-xl font-semibold text-blue-600 mb-2">About me</h2>
-        <p className="text-gray-700 mb-4 text-sm leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      {/* Right Text Content */}
+      <div className="md:ml-16 max-w-xl text-center md:text-left space-y-6">
+        <h2 className="text-4xl font-semibold text-indigo-400 mb-4">About Me</h2>
+
+        <p className="text-indigo-200 text-lg leading-relaxed transition-all duration-300 max-w-xl">
+          I am a passionate Software Engineer with experience building modern web applications
+          using the latest technology stacks. I enjoy creating clean and performant code,
+          and I am constantly improving my skills.
+          {expanded && (
+            <>
+              {' '}
+              I also love collaborating with teams, solving complex problems, and exploring new
+              innovations in technology to deliver quality products that make an impact.
+            </>
+          )}
         </p>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200 text-sm">
-          Read More
+
+        <button
+          onClick={handleReadMore}
+          className="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition transform hover:scale-105 inline-block"
+          aria-expanded={expanded}
+          aria-controls="about-more-text"
+        >
+          {expanded ? 'Show Less' : 'Read More'}
         </button>
       </div>
     </section>
